@@ -94,9 +94,6 @@
 
 (defn move-components[state components] (conj '() (move state inc components) (move state dec components)))
 
-;(defn visited-or-empty? [visited new-state]
-;  (or (empty? new-state) (contains? visited (dissoc new-state :steps))))
-
 (defn visited-or-empty? [visited new-state]
   (or (empty? new-state) (contains? visited {:floors (map summarize-floor (:floors new-state)) :elevator (:elevator new-state)})))
 
